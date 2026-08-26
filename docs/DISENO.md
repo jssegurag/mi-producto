@@ -2,7 +2,7 @@
 
 **Fecha:** 2026-08-26
 **Repo:** https://github.com/jssegurag/mi-producto (público, MIT)
-**Estado:** diseño aprobado pendiente de revisión → implementación
+**Estado:** implementado (fases 0–7). Pendiente: publicación (fase 8).
 
 ---
 
@@ -28,9 +28,12 @@ los asistentes de un meetup de la comunidad de Claude Code.
 ## 2. Origen y aislamiento
 
 Este repo es una **destilación independiente** de una vertical agéntica privada
-(`trycore-spec-product-flow`, v0.4.0). Se copió la metodología, los agentes
-revisores y las plantillas; se reescribieron los comandos, el flujo y el
-vocabulario.
+de consultoría (v0.4.0). Se copió la metodología, los agentes revisores y las
+plantillas; se reescribieron los comandos, el flujo y el vocabulario.
+
+El repo de origen es privado y **no se nombra aquí a propósito**: este documento
+es público. `scripts/check-limpio.sh` verifica que no se cuele ninguna referencia
+a él en nada de lo que se distribuye.
 
 **Regla dura de aislamiento:** el repo de origen es **de solo lectura**. Ningún
 archivo, commit, rama o push de este trabajo toca aquel repo. Los archivos se
@@ -104,8 +107,8 @@ Cambios respecto al `onboard` del origen:
   presentado como *"Debe / Debería / Podría / Ahora no"*. Un citizen developer no
   tiene criterio para elegir entre RICE y Eisenhower, y obligarlo a hacerlo en el
   minuto uno es una barrera pura.
-- **Desaparece el preflight en bash** (`test -f .claude/.trycore-version`). Si el
-  plugin está corriendo, está instalado.
+- **Desaparece el preflight en bash** que comprobaba un archivo marcador de
+  instalación. Si el plugin está corriendo, está instalado.
 - **Desaparecen las menciones a auto-memory y bloques marcados** de la
   conversación visible. Siguen ocurriendo, en silencio.
 - **Termina ofreciendo continuar** sin cambiar de comando: *"¿Arrancamos con los
@@ -182,19 +185,19 @@ de seguridad cuando el nudge no basta.
 
 ### Mapa de renombrado
 
-| Origen | Aquí |
+| Nombre en el origen | Nombre aquí |
 |---|---|
-| `trycore-escribir-prd` | `documento-de-idea` |
-| `trycore-descomponer-prd-a-epicas` | `agrupar-en-bloques` |
-| `trycore-crear-mapa-historias` | `mapa-del-recorrido` |
-| `trycore-escribir-historia-usuario` | `escribir-tarea` |
-| `trycore-escribir-criterios-aceptacion-bdd` | `criterios-de-listo` |
-| `trycore-construir-backlog` | `lista-de-trabajo` |
-| `trycore-priorizar-backlog` | `decidir-que-va-primero` |
-| `trycore-validar-invest` | `revisar-tareas` |
-| `trycore-revisar-calidad-documental` | `revisar-todo` |
-| `trycore-mapear-flujos-navegacion` | `dibujar-pantallas` |
-| `trycore-flujo-prd-a-backlog` | `flujo-completo` |
+| `escribir-prd` | `documento-de-idea` |
+| `descomponer-prd-a-epicas` | `agrupar-en-bloques` |
+| `crear-mapa-historias` | `mapa-del-recorrido` |
+| `escribir-historia-usuario` | `escribir-tarea` |
+| `escribir-criterios-aceptacion-bdd` | `criterios-de-listo` |
+| `construir-backlog` | `lista-de-trabajo` |
+| `priorizar-backlog` | `decidir-que-va-primero` |
+| `validar-invest` | `revisar-tareas` |
+| `revisar-calidad-documental` | `revisar-todo` |
+| `mapear-flujos-navegacion` | `dibujar-pantallas` |
+| `flujo-prd-a-backlog` | `flujo-completo` |
 
 Los **8 agentes revisores se portan sin cambios funcionales** (solo se limpia el
 prefijo y cualquier mención de marca). Son invisibles para el usuario y son
@@ -287,7 +290,7 @@ disclosure.
 
 ### Balance
 
-| | Origen | Aquí |
+| | Nombre en el origen | Nombre aquí |
 |---|---|---|
 | Comandos visibles | 11 | **3** |
 | Documentos | 12 | **3** |
@@ -352,28 +355,40 @@ El trabajo está terminado cuando:
 
 | Fase | Qué | Entregable |
 |---|---|---|
-| 0 | Scaffold: `plugin.json`, `marketplace.json`, LICENSE MIT, `.gitignore` | Repo instalable vacío |
-| 1 | Portar 11 skills: renombrado + descripciones bilingües + limpieza de marca | `skills/` |
-| 2 | Portar 8 agentes: limpieza de prefijo y marca | `agents/` |
-| 3 | Escribir los 3 comandos desde cero | `commands/` |
-| 4 | Templates `docs/` con las 6 carpetas, `LEEME.md` puente y `CLAUDE.md` scoped | `templates/` |
-| 5 | Hooks podados y reescritos en lenguaje natural | `hooks/`, `scripts/` |
-| 6 | `README.md`, `COMO-FUNCIONA.md`, `METODO.md`, `check-limpio.sh` | Documentación |
-| 7 | Prueba end-to-end en carpeta vacía, actuando como asistente al meetup | Evidencia de §10.4 |
-| 8 | Publicación: primer push a `jssegurag/mi-producto` | **Solo con aprobación explícita** |
+| 0 ✅ | Scaffold: `plugin.json`, `marketplace.json`, LICENSE MIT, `.gitignore` | Repo instalable vacío |
+| 1 ✅ | Portar 11 skills: renombrado + descripciones bilingües + limpieza de marca | `skills/` |
+| 2 ✅ | Portar 8 agentes: limpieza de prefijo y marca | `agents/` |
+| 3 ✅ | Escribir los 3 comandos desde cero | `commands/` |
+| 4 ✅ | Templates `docs/` con las 6 carpetas, `LEEME.md` puente y `CLAUDE.md` scoped | `templates/` |
+| 5 ✅ | Hooks podados y reescritos en lenguaje natural | `hooks/`, `scripts/` |
+| 6 ✅ | `README.md`, `COMO-FUNCIONA.md`, `METODO.md`, `check-limpio.sh` | Documentación |
+| 7 ✅ | Prueba end-to-end en carpeta vacía, actuando como asistente al meetup | Evidencia de §10.4 |
+| 8 ⏳ | Publicación: primer push a `jssegurag/mi-producto` | **Solo con aprobación explícita** |
 
 **Nada se publica hasta que las fases 0–7 estén completas y revisadas.** Los
 commits ocurren en local; el push es un acto separado y explícito.
 
 ---
 
-## 12. Puntos abiertos para revisión
+## 12. Puntos abiertos — resueltos en la implementación
 
-Estos quedaron sin resolver y se implementan con el valor por defecto indicado,
-salvo que se decida lo contrario:
-
-| # | Punto | Por defecto |
+| # | Punto | Cómo quedó |
 |---|---|---|
-| A1 | Nombres de skills (`agrupar-en-bloques` vs. alternativas) | El mapa de §6 |
-| A2 | Hook `reflect-session` | Podado (§8) |
-| A3 | Guion de demo de 10 minutos para la charla | **No incluido.** Se añadiría como fase 9 |
+| A1 | Nombres de skills | Se aplicó el mapa de §6 sin cambios |
+| A2 | Hook `reflect-session` | Podado. Se conservan solo `SessionStart` (orientación) y `PostToolUse` (aviso silencioso) |
+| A3 | Guion de demo de 10 min | **No incluido.** Sigue disponible como trabajo adicional si se pide |
+
+---
+
+## 13. Verificación realizada
+
+| Criterio (§10) | Cómo se comprobó | Resultado |
+|---|---|---|
+| 1 · Aislamiento | `git status --porcelain` y `git log -1` sobre el repo de origen | 0 cambios, `HEAD` intacto ✅ |
+| 2 · Sin marca | `scripts/check-limpio.sh` sobre todo lo distribuible | Limpio ✅ |
+| 3 · Instalable | JSON válidos + rutas de `plugin.json` existen + frontmatter de 11 skills, 8 agentes y 3 comandos | Correcto ✅ |
+| 4 · End-to-end | Simulación de `/empezar` en carpeta vacía: 6 carpetas + 13 archivos, idempotente al repetir | Correcto ✅ |
+| 5 · Calidad preservada | Reglas duras de los 12 componentes, las 6 preguntas y Dado/Cuando/Entonces presentes en skills, agentes y plantillas | Correcto ✅ |
+| 6 · Legible | Barrido de vocabulario sobre plantillas y comandos; términos técnicos solo dentro de agentes (invisibles) y `METODO.md` (referencia) | Correcto ✅ |
+
+**No verificado:** que el plugin instale de verdad vía `/plugin marketplace add`. Eso requiere que el repo esté publicado, es decir la fase 8. Las comprobaciones de estructura son un buen indicio, no una prueba de instalación real.

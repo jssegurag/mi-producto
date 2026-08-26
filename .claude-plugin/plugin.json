@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "mi-producto",
+  "displayName": "Mi Producto",
+  "version": "1.0.0",
+  "description": "Convierte tu idea en los documentos que un equipo necesita para construirla. Pensado para gente que no programa: hablas normal, Claude escribe el documento de producto, las tareas y la lista de trabajo.",
+  "author": {
+    "name": "jssegurag",
+    "url": "https://github.com/jssegurag"
+  },
+  "homepage": "https://github.com/jssegurag/mi-producto",
+  "repository": "https://github.com/jssegurag/mi-producto",
+  "license": "MIT",
+  "keywords": [
+    "producto",
+    "no-code",
+    "citizen-developer",
+    "prd",
+    "historias-de-usuario",
+    "backlog",
+    "discovery",
+    "espanol"
+  ],
+  "commands": "./commands/",
+  "hooks": "./hooks/hooks.json"
+}

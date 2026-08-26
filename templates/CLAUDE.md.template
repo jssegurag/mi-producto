@@ -1,0 +1,59 @@
+# CLAUDE.md
+
+<!-- BEGIN mi-producto -->
+## Documentos de producto
+
+Este proyecto usa el plugin **Mi Producto** para escribir y mantener los documentos que describen qué se va a construir.
+
+```
+La idea → El recorrido → Las tareas → La lista → Qué va primero → (Las pantallas)
+```
+
+### Dónde vive cada cosa
+
+```
+docs/
+├── 1-la-idea/            Qué es el producto y para quién   (en la industria: PRD)
+├── 2-el-recorrido/       Bloques + el camino del usuario   (épicas + User Story Map)
+├── 3-tareas/             T-XXX.md, cada una con criterios  (historias de usuario + AC)
+├── 4-lista-de-trabajo/   Todo junto, en orden              (backlog)
+├── 5-que-va-primero/     El orden y por qué                (priorización)
+└── 6-pantallas/          Diagramas de navegación           (user flows)
+```
+
+### Reglas que no se negocian
+
+1. Cada tarea vive en `docs/3-tareas/T-XXX-<slug>.md` con su encabezado de datos completo (`id, titulo, bloque, prioridad, complejidad, estado`).
+2. Los criterios de aceptación se escriben en **Dado que / Cuando / Entonces**. Nunca en prosa suelta. Entre 3 y 5 escenarios: caso normal + error + caso raro.
+3. Toda tarea pasa las **6 preguntas de calidad** antes de marcarse `estado: lista`.
+4. El método completo vive en el `METODO.md` del plugin. **Si una skill contradice el método, gana el método.**
+5. Ningún documento se da por terminado sin pasar por su revisor (con `/revisar`).
+
+### Comandos
+
+| Comando | Para qué |
+|---|---|
+| `/empezar` | Preparar el proyecto (una sola vez) |
+| `/documentar` | Convertir la idea en documentos, paso a paso |
+| `/revisar` | Comprobar que todo está bien antes de enseñarlo |
+
+Lo demás se pide hablando: *"añade una tarea para el login"*, *"dibújame las pantallas"*, *"reescribe la tarea 3"*.
+
+### Este proyecto
+
+- **Nombre**: {{NOMBRE}}
+- **De qué va**: {{DE_QUE_VA}}
+- **Para quién es**: {{PARA_QUIEN}}
+- **Cómo se decide el orden**: Debe / Debería / Podría / Ahora no
+
+(Si ves los valores como `{{...}}`, ejecuta `/empezar`.)
+
+### Cómo se numeran las cosas
+
+- Bloques: `B-001`, `B-002`, … (3 dígitos)
+- Tareas: `T-001`, `T-002`, … (3 dígitos)
+- Nombres de archivo en minúsculas-con-guiones-sin-acentos
+
+<!-- END mi-producto -->
+
+<!-- De aquí para abajo puedes añadir lo que quieras. El plugin no lo toca. -->

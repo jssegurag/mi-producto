@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "mi-producto",
+  "description": "Plugins para llevar una idea hasta documentos de producto listos para construir.",
+  "owner": {
+    "name": "jssegurag",
+    "url": "https://github.com/jssegurag"
+  },
+  "plugins": [
+    {
+      "name": "mi-producto",
+      "displayName": "Mi Producto",
+      "source": "./",
+      "description": "Convierte tu idea en los documentos que un equipo necesita para construirla. Pensado para gente que no programa.",
+      "author": {
+        "name": "jssegurag",
+        "url": "https://github.com/jssegurag"
+      },
+      "homepage": "https://github.com/jssegurag/mi-producto",
+      "license": "MIT",
+      "keywords": [
+        "producto",
+        "no-code",
+        "citizen-developer",
+        "prd",
+        "historias-de-usuario",
+        "backlog",
+        "discovery",
+        "espanol"
+      ]
+    }
+  ]
+}
