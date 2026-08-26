@@ -2,7 +2,7 @@
 
 **Fecha:** 2026-08-26
 **Repo:** https://github.com/jssegurag/mi-producto (público, MIT)
-**Estado:** implementado (fases 0–7). Pendiente: publicación (fase 8).
+**Estado:** implementado y publicado. Rama de trabajo: `develop`.
 
 ---
 
@@ -363,10 +363,13 @@ El trabajo está terminado cuando:
 | 5 ✅ | Hooks podados y reescritos en lenguaje natural | `hooks/`, `scripts/` |
 | 6 ✅ | `README.md`, `COMO-FUNCIONA.md`, `METODO.md`, `check-limpio.sh` | Documentación |
 | 7 ✅ | Prueba end-to-end en carpeta vacía, actuando como asistente al meetup | Evidencia de §10.4 |
-| 8 ⏳ | Publicación: primer push a `jssegurag/mi-producto` | **Solo con aprobación explícita** |
+| 8 ✅ | Publicación: primer push a `jssegurag/mi-producto`, rama `develop` | Hecho con aprobación explícita |
 
-**Nada se publica hasta que las fases 0–7 estén completas y revisadas.** Los
-commits ocurren en local; el push es un acto separado y explícito.
+Las fases 0–7 se completaron y verificaron en local antes de publicar. El push
+fue un acto separado y explícito, autorizado por el DRI del repo.
+
+**Ramas:** el trabajo vive en `develop`. `main` se reserva para versiones
+estabilizadas, si en algún momento se decide separar las dos.
 
 ---
 
